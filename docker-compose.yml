@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  golang:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./docker/golang/local/Dockerfile
+    volumes:
+      - .:/go/src/app:delegated
+    environment:
+      PSQL_HOST: postgres
+      PSQL_PORT: 5432
+      PSQL_USER: psql_user
+      PSQL_PASSWORD: psql_password
+      PSQL_DATABASE: psql_database
+      PSQL_SSLMODE: disable
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data/pgdata:delegated
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: psql_user
+      POSTGRES_PASSWORD: psql_password
+      POSTGRES_DB: psql_database
