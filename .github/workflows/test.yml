@@ -17,3 +17,5 @@ jobs:
         run: ls
       - name: pwd
         run: pwd
+      - name: echo
+        run: echo --token=${{ secrets.HOGE_TOKEN }}
