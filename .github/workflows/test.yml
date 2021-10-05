@@ -24,7 +24,7 @@ jobs:
       - name: exoprt_read
         run: echo $LOG_FILE_PATH
       - name: Create dot env file
-      - shell: bash
+        shell: bash
         run: |
           touch .env
           echo "LOG_FILE_PATH=${{ secrets.LOG_FILE_PATH }}" >> .env
