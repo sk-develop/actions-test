@@ -19,8 +19,11 @@ jobs:
         run: pwd
       - name: echo
         run: echo ${{ secrets.LOG_FILE_PATH }}
-      - name: echo2
-        run: echo "aa"
+      - name: exoprt
+        run: export TEST_LOG_FILE_PATH=${{ secrets.LOG_FILE_PATH }}
+      - name: exoprt_read
+        run: echo $TEST_LOG_FILE_PATH
       
           
           
+        
