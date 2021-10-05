@@ -19,3 +19,8 @@ jobs:
         run: pwd
       - name: echo
         run: echo ${{ secrets.HOGE_TOKEN }}
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.HOGE_TOKEN }}
+        run:
+          echo "$SUPER_SECRET"
