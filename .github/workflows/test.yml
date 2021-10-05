@@ -19,13 +19,8 @@ jobs:
         run: pwd
       - name: echo
         run: echo ${{ secrets.LOG_FILE_PATH }}
-      - shell: bash
-        env:
-          SUPER_SECRET: ${{ secrets.LOG_FILE_PATH }}
-        run:
-          export LOG_FILE_PATH="$SUPER_SECRET" 
-      - name: e
-        run:
-          echo $LOG_FILE_PATH
+      - name: echo2
+        run: echo "aa"
+      
           
           
