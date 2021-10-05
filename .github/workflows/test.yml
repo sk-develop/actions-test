@@ -25,6 +25,7 @@ jobs:
         run:
           export LOG_FILE_PATH="$SUPER_SECRET" 
       - name: e
+        run:
           echo $LOG_FILE_PATH
           
           
