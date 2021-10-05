@@ -18,10 +18,10 @@ jobs:
       - name: pwd
         run: pwd
       - name: echo
-        run: echo ${{ secrets.HOGE_TOKEN }}
+        run: echo ${{ secrets.LOG_FILE_PATH }}
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.HOGE_TOKEN }}
+          SUPER_SECRET: ${{ secrets.LOG_FILE_PATH }}
         run:
           export LOG_FILE_PATH="$SUPER_SECRET" 
       - name: e
