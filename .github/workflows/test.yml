@@ -20,9 +20,15 @@ jobs:
       - name: echo
         run: echo ${{ secrets.LOG_FILE_PATH }}
       - name: exoprt
-        run: export TEST_LOG_FILE_PATH=${{ secrets.LOG_FILE_PATH }}
+        run: export LOG_FILE_PATH=${{ secrets.LOG_FILE_PATH }}
       - name: exoprt_read
-        run: echo $TEST_LOG_FILE_PATH
+        run: echo $LOG_FILE_PATH
+      - name: Create dot env file
+      - shell: bash
+        run: |
+          touch .env
+          echo "LOG_FILE_PATH=${{ secrets.LOG_FILE_PATH }}" >> .env
+          echo $LOG_FILE_PATH
       
           
           
