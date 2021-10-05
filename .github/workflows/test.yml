@@ -23,5 +23,7 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.HOGE_TOKEN }}
         run:
-          echo "aaa"
-          # echo "$SUPER_SECRET"
+          export LOG_FILE_PATH="$SUPER_SECRET"
+          echo $LOG_FILE_PATH
+          
+          
