@@ -23,4 +23,5 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.HOGE_TOKEN }}
         run:
-          echo "$SUPER_SECRET"
+          echo "aaa"
+          # echo "$SUPER_SECRET"
