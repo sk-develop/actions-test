@@ -18,4 +18,4 @@ jobs:
       - name: pwd
         run: pwd
       - name: echo
-        run: echo --token=${{ secrets.HOGE_TOKEN }}
+        run: echo ${{ secrets.HOGE_TOKEN }}
